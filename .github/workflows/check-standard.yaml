@@ -58,7 +58,7 @@ jobs:
 
       - name: Install tidycensuskr
         run: |
-          Rscript -e "remotes::install_github('sigmafelix/tidycensuskr')"
+          Rscript -e "remotes::install_github('sigmafelix/tidycensuskr', force = TRUE)"
 
       - uses: r-lib/actions/check-r-package@v2
         with:
