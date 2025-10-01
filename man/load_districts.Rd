@@ -2,7 +2,7 @@
 % Please edit documentation in R/load_districts.R
 \name{load_districts}
 \alias{load_districts}
-\title{Load `sf` district polygons}
+\title{Load \code{sf} district polygons}
 \usage{
 load_districts(year = 2020)
 }
@@ -10,19 +10,21 @@ load_districts(year = 2020)
 \item{year}{integer(1). census year to load. Defaults to 2020.}
 }
 \value{
-An `sf` object containing the district polygons.
+An \code{sf} object containing the district polygons.
 }
 \description{
-Load `sf` district polygons
+Load \code{sf} district polygons
 }
 \details{
 The function loads district polygons for the specified year from the package's
 extdata directory. The polygons are stored in an RDS file and are read using
-the `readRDS` function. The polygons are in the Simple Features (sf) format,
+the \code{readRDS} function. The polygons are in the Simple Features (sf) format,
 which is suitable for spatial data analysis in R. The polygons include following
 attributes:
-- `year`: The census year (e.g., 2020).
-- `adm2_code`: The administrative code for the district.
+\itemize{
+\item \code{year}: The census year (e.g., 2020).
+\item \code{adm2_code}: The administrative code for the district.
+}
 }
 \examples{
 library(sf)

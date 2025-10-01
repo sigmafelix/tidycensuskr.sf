@@ -38,7 +38,9 @@ Imports:
 Suggests:
     knitr,
     rmarkdown,
-    testthat
+    testthat,
+    remotes,
+    devtools
 Remotes:
     sigmafelix/tidycensuskr
 LazyData: true
@@ -49,5 +51,5 @@ URL: https://github.com/sigmafelix/tidycensussfkr
 BugReports: https://github.com/sigmafelix/tidycensussfkr/issues
 RoxygenNote: 7.3.2
 Roxygen: list(markdown = TRUE)
-VignetteBuilder: knitr
+VignetteBuilder: knitr, rmarkdown
 Config/testthat/edition: 3
