@@ -1,0 +1,56 @@
+---
+output:
+  github_document:
+    html_preview: false
+always_allow_html: true
+---
+
+
+# tidycensussfkr
+District boundaries by censal years for `tidycensuskr` package
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+This package is a companion package for `tidycensuskr`. It provides district boundaries by censal years for South Korea.
+
+
+## Installation
+```r
+install.packages("tidycensussfkr", repos = "https://sigmafelix.r-universe.dev")
+```
+
+An up-to-date version can be installed from GitHub with:
+```r
+# install.packages("devtools")
+devtools::install_github("sigmafelix/tidycensussfkr")
+```
+
+## Usage
+`load_districts()` function is the main function to load district boundaries by censal years. The current version supports three censal years: 2010, 2015, and 2020. The function takes a single argument `year` which specifies the censal year to load. The default value is 2020.
+
+```{r load_2020}
+library(tidycensussfkr)
+library(sf)
+sf::sf_use_s2(FALSE)
+
+# Load 2020 district boundaries
+adm2_2020 <- load_districts(year = 2020)
+head(adm2_2020)
+plot(st_geometry(adm2_2020))
+
+```
+
+
+## Data source
+The district boundaries are sourced from the Statistics Korea (KOSTAT) website. The original data were simplified to reduce file size and improve visualization performance. The simplification process may have resulted in some loss of detail in the boundaries.
+
+
+## Issues
+Please report any issues, bugs, or suggestions on Issues page of this GitHub repository.
