@@ -1,6 +1,7 @@
 tools/
 ^doc$
 ^Meta$
-\\.github
+.github
 README.Rmd
 _pkgdown.yaml
+.vscode
