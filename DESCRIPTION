@@ -35,6 +35,10 @@ Imports:
     cowplot,
     grid,
     ggspatial
+Suggests:
+    knitr,
+    rmarkdown,
+    testthat
 Remotes:
     sigmafelix/tidycensuskr
 LazyData: true
