@@ -46,7 +46,12 @@ jobs:
             any::rcmdcheck
             any::knitr
             any::rmarkdown
+            any::remotes
           needs: check
+
+      - name: Install tidycensuskr
+        run: |
+          Rscript -e "remotes::install_github('sigmafelix/tidycensuskr')"
 
       - uses: r-lib/actions/check-r-package@v2
         with:
