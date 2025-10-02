@@ -1,0 +1,52 @@
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+name: R-CMD-check
+
+jobs:
+  R-CMD-check:
+    runs-on: ${{ matrix.config.os }}
+    name: ${{ matrix.config.os }} (${{ matrix.config.r }})
+
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - {os: macos-latest, r: 'release'}
+          - {os: ubuntu-latest, r: 'release'}
+
+    env:
+      # Use the built-in GitHub token for public repos; omit for forks if you want.
+      GITHUB_PAT: ${{ secrets.GH_TOKEN }}
+      R_KEEP_PKG_SOURCE: yes
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: r-lib/actions/setup-pandoc@v2
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: ${{ matrix.config.r }}
+          use-public-rspm: true
+
+      # Installs system requirements + all package deps (from DESCRIPTION),
+      # including GitHub Remotes via pak, in the correct order.
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          # 'needs: check' installs the dependencies required for R CMD check
+          needs: check
+          # Add extra tools used during check (not required if in Suggests)
+          extra-packages: |
+            any::rcmdcheck
+            any::knitr
+            any::rmarkdown
+            any::tictoc
+            any::units
+
+      - uses: r-lib/actions/check-r-package@v2
+        with:
+          upload-snapshots: true
