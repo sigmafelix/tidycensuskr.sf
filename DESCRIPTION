@@ -25,6 +25,7 @@ Description:
     and 2020.
 License: MIT + file LICENSE
 Imports:
+    tidycensuskr,
     sf,
     dplyr,
     tidyr,
