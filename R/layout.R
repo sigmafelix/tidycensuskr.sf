@@ -4,6 +4,8 @@
 #' This function first downloads adjacent country polygon data from GADM
 #' and then creates a basemap layout with insets for South Korea.
 #' The sf objects are reprojected to EPSG:5179 (Korea 2000 / Unified CS).
+#' @param geodata_path A character string specifying the directory
+#'   to store the downloaded GADM data. Default is `"~/geodata"`.
 #' @note The output is a tmap object that can be further customized.
 #'   It is recommended to export the map using `tmap::tmap_save()`
 #'   with a high resolution (i.e., dpi > 200).
@@ -73,7 +75,8 @@ basemap_kor <- function(
       frame.lwd = 0
     ) +
     tmap::tm_inset(
-      bb_bnd, height = 5, width = 4,
+      bb_bnd,
+      height = 5, width = 4,
       margins = rep(0, 4),
       between_margin = rep(0, 4),
       frame = FALSE,

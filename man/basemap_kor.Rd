@@ -6,6 +6,10 @@
 \usage{
 basemap_kor(geodata_path = "~/geodata")
 }
+\arguments{
+\item{geodata_path}{A character string specifying the directory
+to store the downloaded GADM data. Default is \code{"~/geodata"}.}
+}
 \value{
 A \code{tmap} object representing the basemap layout for South Korea.
 }
