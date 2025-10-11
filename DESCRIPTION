@@ -1,6 +1,6 @@
 Package: tidycensussfkr
 Title: District Boundaries by Censal Years for tidycensuskr Package
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: c(
     person(given = "Insang", 
           family = "Song", 
@@ -35,6 +35,7 @@ Imports:
     cowplot,
     grid,
     ggspatial,
+    geodata,
     tidycensuskr
 Suggests:
     knitr,
