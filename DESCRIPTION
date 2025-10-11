@@ -1,6 +1,6 @@
 Package: tidycensussfkr
 Title: District Boundaries by Censal Years for tidycensuskr Package
-Version: 0.1.0
+Version: 0.1.2
 Authors@R: c(
     person(given = "Insang", 
           family = "Song", 
@@ -19,13 +19,12 @@ Authors@R: c(
           comment = c(ORCID = "0000-0003-2637-7933"))
           )
 Description:
-    This package provides district boundaries by censal years for use with 
+    This file-only package provides district boundaries by censal years for use with 
     the tidycensuskr package. It contains spatial boundary data (sf objects)
     for South Korean administrative districts from census years 2010, 2015,
     and 2020.
 License: MIT + file LICENSE
 Imports:
-    tidycensuskr,
     sf,
     dplyr,
     tidyr,
@@ -35,22 +34,24 @@ Imports:
     biscale,
     cowplot,
     grid,
-    ggspatial
+    ggspatial,
+    geodata,
+    tidycensuskr
 Suggests:
     knitr,
     rmarkdown,
     testthat,
     remotes,
     devtools
+LazyData: true
 Remotes:
     sigmafelix/tidycensuskr
-LazyData: true
 Depends:
     R (>= 4.1.0)
 Encoding: UTF-8
 URL: https://github.com/sigmafelix/tidycensussfkr
 BugReports: https://github.com/sigmafelix/tidycensussfkr/issues
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 Roxygen: list(markdown = TRUE)
 VignetteBuilder: knitr, rmarkdown
 Config/testthat/edition: 3

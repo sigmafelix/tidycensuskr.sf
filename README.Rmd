@@ -28,8 +28,8 @@ install.packages("tidycensussfkr", repos = "https://sigmafelix.r-universe.dev")
 
 An up-to-date version can be installed from GitHub with:
 ```r
-# install.packages("devtools")
-devtools::install_github("sigmafelix/tidycensussfkr")
+# install.packages("remotes")
+remotes::install_github("sigmafelix/tidycensussfkr")
 ```
 
 ## Usage
