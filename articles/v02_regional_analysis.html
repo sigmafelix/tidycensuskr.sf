@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">tidycensussfkr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,7 +59,7 @@
 
       <h1>Regional analysis with tidycensuskr</h1>
             
-            <h4 data-toc-skip class="date">October 02, 2025</h4>
+            <h4 data-toc-skip class="date">October 11, 2025</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/sigmafelix/tidycensussfkr/blob/main/vignettes/v02_regional_analysis.Rmd" class="external-link"><code>vignettes/v02_regional_analysis.Rmd</code></a></small>
       <div class="d-none name"><code>v02_regional_analysis.Rmd</code></div>
@@ -89,7 +89,7 @@ region.</li>
 </h3>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load 2020 boundaries</span></span>
-<span><span class="va">sf_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/load_districts.html">load_districts</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">sf_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sigmafelix.github.io/tidycensuskr/reference/load_districts.html" class="external-link">load_districts</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load census population data for 2010 and 2020</span></span>
 <span><span class="va">df_2010_pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sigmafelix.github.io/tidycensuskr/reference/anycensus.html" class="external-link">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2010</span>, </span>
@@ -170,7 +170,7 @@ classification of population (x) vs. tax (y).</li>
 </h3>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load 2020 boundaries</span></span>
-<span><span class="va">sf_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/load_districts.html">load_districts</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">sf_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sigmafelix.github.io/tidycensuskr/reference/load_districts.html" class="external-link">load_districts</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load census data</span></span>
 <span><span class="va">df_2020_pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sigmafelix.github.io/tidycensuskr/reference/anycensus.html" class="external-link">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>,</span>
@@ -323,7 +323,7 @@ centered on 100 (balanced sex ratio).</li>
 </h3>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load boundaries</span></span>
-<span><span class="va">sf_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/load_districts.html">load_districts</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
+<span><span class="va">sf_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sigmafelix.github.io/tidycensuskr/reference/load_districts.html" class="external-link">load_districts</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Merge SMA population data with boundaries</span></span>
 <span><span class="va">sf_2020_sma</span> <span class="op">&lt;-</span> <span class="va">sf_2020</span> <span class="op">|&gt;</span></span>
