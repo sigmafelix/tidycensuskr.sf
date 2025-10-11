@@ -34,7 +34,8 @@ Imports:
     biscale,
     cowplot,
     grid,
-    ggspatial
+    ggspatial,
+    tidycensuskr
 Suggests:
     knitr,
     rmarkdown,
@@ -42,6 +43,8 @@ Suggests:
     remotes,
     devtools
 LazyData: true
+Remotes:
+    sigmafelix/tidycensuskr
 Depends:
     R (>= 4.1.0)
 Encoding: UTF-8
