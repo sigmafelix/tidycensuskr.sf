@@ -21,7 +21,7 @@ load_districts <- function(year = 2020) {
 
   districts <-
     readRDS(
-      system.file("extdata", file_path, package = "tidycensussfkr")
+      system.file("extdata", file_path, package = "tidycensuskr.sf")
     )
   # Return the loaded districts
   return(districts)
