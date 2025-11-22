@@ -15,7 +15,7 @@ library(sf)
 library(dplyr)
 library(tidyr)
 library(tidycensuskr)
-library(tidycensussfkr)
+library(tidycensuskr.sf)
 library(biscale)
 library(cowplot)
 library(grid)
@@ -44,10 +44,10 @@ sf_2020 <- load_districts(year = 2020)
 
 ```{r filter-merge_1}
 # Load census population data for 2010 and 2020
-df_2010_pop <- anycensus(year = 2010, 
+df_2010_pop <- anycensus(year = 2010,
                          codes = c("Gyeongsangnam-do", "Busan", "Ulsan"), 
                          type = "population")
-df_2020_pop <- anycensus(year = 2020, 
+df_2020_pop <- anycensus(year = 2020,
                          codes = c("Gyeongsangnam-do", "Busan", "Ulsan"), 
                          type = "population")
 

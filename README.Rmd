@@ -6,7 +6,7 @@ always_allow_html: true
 ---
 
 
-# tidycensussfkr
+# tidycensuskr.sf
 District boundaries by censal years for `tidycensuskr` package
 
 ```{r, include = FALSE}
@@ -23,20 +23,21 @@ This package is a companion package for `tidycensuskr`. It provides district bou
 
 ## Installation
 ```r
-install.packages("tidycensussfkr", repos = "https://sigmafelix.r-universe.dev")
+install.packages("tidycensuskr.sf", repos = "https://sigmafelix.r-universe.dev")
 ```
 
 An up-to-date version can be installed from GitHub with:
 ```r
 # install.packages("remotes")
-remotes::install_github("sigmafelix/tidycensussfkr")
+remotes::install_github("sigmafelix/tidycensuskr.sf")
 ```
 
 ## Usage
 `load_districts()` function is the main function to load district boundaries by censal years. The current version supports three censal years: 2010, 2015, and 2020. The function takes a single argument `year` which specifies the censal year to load. The default value is 2020.
 
 ```{r load_2020}
-library(tidycensussfkr)
+library(tidycensuskr)
+library(tidycensuskr.sf)
 library(sf)
 sf::sf_use_s2(FALSE)
 

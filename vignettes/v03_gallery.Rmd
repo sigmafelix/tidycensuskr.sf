@@ -15,7 +15,7 @@ library(sf)
 library(dplyr)
 library(tidyr)
 library(tidycensuskr)
-library(tidycensussfkr)
+library(tidycensuskr.sf)
 library(spdep)
 ```
 
@@ -41,7 +41,7 @@ The resulting LISA cluster map highlights where economic activities are concentr
 sf_2020 <- load_districts(year = 2020)
 
 # Load 2020 economy data
-df_2020_economy <- anycensus(year = 2020, 
+df_2020_economy <- anycensus(year = 2020,
                              type = "economy")
 
 # Merge with spatial data
@@ -52,7 +52,7 @@ sf_2020_economy <- sf_2020 |>
 var <- sf_2020_economy$company_total_cnt
 ```
 
-### Global Moran’s I
+### Global Moran's I
 ```{r global_moran_1}
 # Build neighbors (queen contiguity) and spatial weights
 nb <- poly2nb(sf_2020_economy, queen = TRUE)
