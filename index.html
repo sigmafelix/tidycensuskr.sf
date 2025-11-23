@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>District Boundaries by Censal Years for tidycensuskr Package • tidycensussfkr</title>
+<title>District Boundaries by Censal Years for tidycensuskr Package • tidycensuskr.sf</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
@@ -20,9 +20,9 @@
 
     <nav class="navbar navbar-expand-lg fixed-top bg-light" data-bs-theme="light" aria-label="Site navigation"><div class="container">
 
-    <a class="navbar-brand me-2" href="index.html">tidycensussfkr</a>
+    <a class="navbar-brand me-2" href="index.html">tidycensuskr.sf</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.4</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,8 +35,7 @@
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="articles/v01_intro.html">Working with tidycensuskr</a></li>
-    <li><a class="dropdown-item" href="articles/v02_regional_analysis.html">Regional analysis with tidycensuskr</a></li>
+<li><a class="dropdown-item" href="articles/v02_regional_analysis.html">Regional analysis with tidycensuskr</a></li>
     <li><a class="dropdown-item" href="articles/v03_gallery.html">Analytics Gallery with tidycensuskr</a></li>
   </ul>
 </li>
@@ -45,7 +44,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/sigmafelix/tidycensussfkr/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/sigmafelix/tidycensuskr.sf/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -73,7 +72,7 @@
 </h2>
 <p><code>load_districts()</code> function is the main function to load district boundaries by censal years. The current version supports three censal years: 2010, 2015, and 2020. The function takes a single argument <code>year</code> which specifies the censal year to load. The default value is 2020.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sigmafelix/tidycensussfkr" class="external-link">tidycensussfkr</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">tidycensussfkr</span><span class="op">)</span></span>
 <span><span class="co">#&gt; tidycensussfkr 0.1.0 (2025-10-01)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatial.github.io/sf/" class="external-link">sf</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; Linking to GEOS 3.12.2, GDAL 3.11.3, PROJ 9.4.1; sf_use_s2() is TRUE</span></span>
@@ -112,8 +111,8 @@
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/sigmafelix/tidycensussfkr/" class="external-link">Browse source code</a></li>
-<li><a href="https://github.com/sigmafelix/tidycensussfkr/issues" class="external-link">Report a bug</a></li>
+<li><a href="https://github.com/sigmafelix/tidycensuskr.sf/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/sigmafelix/tidycensuskr.sf/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
@@ -130,7 +129,7 @@
 <div class="citation">
 <h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li><a href="authors.html#citation">Citing tidycensussfkr</a></li>
+<li><a href="authors.html#citation">Citing tidycensuskr.sf</a></li>
 </ul>
 </div>
 
@@ -154,7 +153,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer>

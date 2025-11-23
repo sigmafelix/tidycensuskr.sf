@@ -1,13 +1,15 @@
 <urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
-<url><loc>https://sigmafelix.github.io/tidycensussfkr/404.html</loc></url>
-<url><loc>https://sigmafelix.github.io/tidycensussfkr/LICENSE-text.html</loc></url>
-<url><loc>https://sigmafelix.github.io/tidycensussfkr/articles/index.html</loc></url>
-<url><loc>https://sigmafelix.github.io/tidycensussfkr/articles/v01_intro.html</loc></url>
-<url><loc>https://sigmafelix.github.io/tidycensussfkr/articles/v02_regional_analysis.html</loc></url>
-<url><loc>https://sigmafelix.github.io/tidycensussfkr/articles/v03_gallery.html</loc></url>
-<url><loc>https://sigmafelix.github.io/tidycensussfkr/authors.html</loc></url>
-<url><loc>https://sigmafelix.github.io/tidycensussfkr/index.html</loc></url>
-<url><loc>https://sigmafelix.github.io/tidycensussfkr/reference/basemap_kor.html</loc></url>
-<url><loc>https://sigmafelix.github.io/tidycensussfkr/reference/index.html</loc></url>
+<url><loc>https://sigmafelix.github.io/tidycensuskr.sf/404.html</loc></url>
+<url><loc>https://sigmafelix.github.io/tidycensuskr.sf/LICENSE-text.html</loc></url>
+<url><loc>https://sigmafelix.github.io/tidycensuskr.sf/articles/index.html</loc></url>
+<url><loc>https://sigmafelix.github.io/tidycensuskr.sf/articles/v02_regional_analysis.html</loc></url>
+<url><loc>https://sigmafelix.github.io/tidycensuskr.sf/articles/v03_gallery.html</loc></url>
+<url><loc>https://sigmafelix.github.io/tidycensuskr.sf/authors.html</loc></url>
+<url><loc>https://sigmafelix.github.io/tidycensuskr.sf/index.html</loc></url>
+<url><loc>https://sigmafelix.github.io/tidycensuskr.sf/news/index.html</loc></url>
+<url><loc>https://sigmafelix.github.io/tidycensuskr.sf/reference/basemap_kor.html</loc></url>
+<url><loc>https://sigmafelix.github.io/tidycensuskr.sf/reference/basemap_kor_in.html</loc></url>
+<url><loc>https://sigmafelix.github.io/tidycensuskr.sf/reference/convert_basic_adm2.html</loc></url>
+<url><loc>https://sigmafelix.github.io/tidycensuskr.sf/reference/index.html</loc></url>
 </urlset>
 
