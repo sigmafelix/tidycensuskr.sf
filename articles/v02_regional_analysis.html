@@ -88,13 +88,13 @@ region.</li>
 </h3>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load 2020 boundaries</span></span>
-<span><span class="va">sf_2020</span> <span class="op">&lt;-</span> <span class="fu">load_districts</span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">sf_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sigmafelix.github.io/tidycensuskr/reference/load_districts.html" class="external-link">load_districts</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load census population data for 2010 and 2020</span></span>
-<span><span class="va">df_2010_pop</span> <span class="op">&lt;-</span> <span class="fu">anycensus</span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2010</span>,</span>
+<span><span class="va">df_2010_pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sigmafelix.github.io/tidycensuskr/reference/anycensus.html" class="external-link">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2010</span>,</span>
 <span>                         codes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Gyeongsangnam-do"</span>, <span class="st">"Busan"</span>, <span class="st">"Ulsan"</span><span class="op">)</span>, </span>
 <span>                         type <span class="op">=</span> <span class="st">"population"</span><span class="op">)</span></span>
-<span><span class="va">df_2020_pop</span> <span class="op">&lt;-</span> <span class="fu">anycensus</span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>,</span>
+<span><span class="va">df_2020_pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sigmafelix.github.io/tidycensuskr/reference/anycensus.html" class="external-link">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>,</span>
 <span>                         codes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Gyeongsangnam-do"</span>, <span class="st">"Busan"</span>, <span class="st">"Ulsan"</span><span class="op">)</span>, </span>
 <span>                         type <span class="op">=</span> <span class="st">"population"</span><span class="op">)</span></span>
 <span></span>
@@ -169,12 +169,12 @@ classification of population (x) vs. tax (y).</li>
 </h3>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load 2020 boundaries</span></span>
-<span><span class="va">sf_2020</span> <span class="op">&lt;-</span> <span class="fu">load_districts</span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">sf_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sigmafelix.github.io/tidycensuskr/reference/load_districts.html" class="external-link">load_districts</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load census data</span></span>
-<span><span class="va">df_2020_pop</span> <span class="op">&lt;-</span> <span class="fu">anycensus</span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>,</span>
+<span><span class="va">df_2020_pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sigmafelix.github.io/tidycensuskr/reference/anycensus.html" class="external-link">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>,</span>
 <span>                         type <span class="op">=</span> <span class="st">"population"</span><span class="op">)</span></span>
-<span><span class="va">df_2020_tax</span> <span class="op">&lt;-</span> <span class="fu">anycensus</span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>,</span>
+<span><span class="va">df_2020_tax</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sigmafelix.github.io/tidycensuskr/reference/anycensus.html" class="external-link">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>,</span>
 <span>                         type <span class="op">=</span> <span class="st">"tax"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Merge population with boundaries</span></span>
@@ -272,7 +272,7 @@ centered on 100 (balanced sex ratio).</li>
 </h3>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load population data for the Seoul Metropolitan Area (SMA)</span></span>
-<span><span class="va">df_sma</span> <span class="op">&lt;-</span> <span class="fu">anycensus</span><span class="op">(</span></span>
+<span><span class="va">df_sma</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sigmafelix.github.io/tidycensuskr/reference/anycensus.html" class="external-link">anycensus</a></span><span class="op">(</span></span>
 <span>  year  <span class="op">=</span> <span class="fl">2020</span>,</span>
 <span>  codes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Seoul"</span>, <span class="st">"Gyeonggi-do"</span>, <span class="st">"Incheon"</span><span class="op">)</span>,</span>
 <span>  type  <span class="op">=</span> <span class="st">"population"</span></span>
@@ -322,7 +322,7 @@ centered on 100 (balanced sex ratio).</li>
 </h3>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load boundaries</span></span>
-<span><span class="va">sf_2020</span> <span class="op">&lt;-</span> <span class="fu">load_districts</span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
+<span><span class="va">sf_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://sigmafelix.github.io/tidycensuskr/reference/load_districts.html" class="external-link">load_districts</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Merge SMA population data with boundaries</span></span>
 <span><span class="va">sf_2020_sma</span> <span class="op">&lt;-</span> <span class="va">sf_2020</span> <span class="op">|&gt;</span></span>
