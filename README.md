@@ -1,5 +1,5 @@
 
-# tidycensussfkr
+# tidycensuskr.sf
 
 District boundaries by censal years for `tidycensuskr` package
 
@@ -9,14 +9,14 @@ district boundaries by censal years for South Korea.
 ## Installation
 
 ``` r
-install.packages("tidycensussfkr", repos = "https://sigmafelix.r-universe.dev")
+install.packages("tidycensuskr.sf", repos = "https://sigmafelix.r-universe.dev")
 ```
 
 An up-to-date version can be installed from GitHub with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("sigmafelix/tidycensussfkr")
+# install.packages("remotes")
+remotes::install_github("sigmafelix/tidycensuskr.sf")
 ```
 
 ## Usage
@@ -27,10 +27,14 @@ years: 2010, 2015, and 2020. The function takes a single argument `year`
 which specifies the censal year to load. The default value is 2020.
 
 ``` r
-library(tidycensussfkr)
-#> tidycensussfkr 0.1.0 (2025-10-01)
+library(tidycensuskr)
+#> tidycensuskr 0.2.4 (2025-11-20)
+#> Please install the companion data package tidycensussfkr to use the district boundaries.
+#> install.packages('tidycensussfkr', repos = 'https://sigmafelix.r-universe.dev')
+library(tidycensuskr.sf)
+#> tidycensussfkr 0.1.4 (2025-11-23)
 library(sf)
-#> Linking to GEOS 3.12.2, GDAL 3.11.3, PROJ 9.4.1; sf_use_s2() is TRUE
+#> Linking to GEOS 3.12.2, GDAL 3.11.4, PROJ 9.4.1; sf_use_s2() is TRUE
 sf::sf_use_s2(FALSE)
 #> Spherical geometry (s2) switched off
 
