@@ -47,6 +47,12 @@ jobs:
             any::tictoc
             any::units
 
+      - name: Install GitHub-only deps (pak)
+        shell: Rscript {0}
+        run: |
+          if (!requireNamespace("pak", quietly = TRUE)) install.packages("pak")
+          pak::pak("sigmafelix/tidycensuskr")      
+
       - uses: r-lib/actions/check-r-package@v2
         with:
           upload-snapshots: true
