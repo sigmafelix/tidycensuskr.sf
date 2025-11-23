@@ -7,8 +7,9 @@
 basemap_kor_in(year = 2020)
 }
 \arguments{
-\item{geodata_path}{A character string specifying the directory
-to store the downloaded GADM data. Default is \code{"~/geodata"}.}
+\item{year}{An integer specifying
+the year of the administrative level 2 data.
+Default is 2020.}
 }
 \value{
 A \code{tmap} object representing the basemap layout for South Korea.

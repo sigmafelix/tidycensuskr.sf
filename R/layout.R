@@ -40,13 +40,25 @@ basemap_kor <- function(
 
   # inset bounding boxes
   bb_ull <-
-    sf::st_bbox(c(xmin = 1288000, xmax = 1308000, ymin = 1942000, ymax = 1956000), crs = 5179)
+    sf::st_bbox(
+      c(xmin = 1288000, xmax = 1308000, ymin = 1942000, ymax = 1956000),
+      crs = 5179
+    )
   bb_dkd <-
-    sf::st_bbox(c(xmin = 1386500, xmax = 1388500, ymin = 1924500, ymax = 1925200), crs = 5179)
+    sf::st_bbox(
+      c(xmin = 1386500, xmax = 1388500, ymin = 1924500, ymax = 1925200),
+      crs = 5179
+    )
   bb_bnd <-
-    sf::st_bbox(c(xmin = 745000, xmax = 765000, ymin = 1965000, ymax = 2008000), crs = 5179)
+    sf::st_bbox(
+      c(xmin = 745000, xmax = 765000, ymin = 1965000, ymax = 2008000),
+      crs = 5179
+    )
   ext_kormain <-
-    sf::st_bbox(c(xmin = 800000, xmax = 1220000, ymin = 1458000, ymax = 2070000), crs = 5179)
+    sf::st_bbox(
+      c(xmin = 800000, xmax = 1220000, ymin = 1458000, ymax = 2070000),
+      crs = 5179
+    )
 
 
   basemap_kor <-
@@ -91,8 +103,9 @@ basemap_kor <- function(
 #' This function first downloads adjacent country polygon data from GADM
 #' and then creates a basemap layout with insets for South Korea.
 #' The sf objects are reprojected to EPSG:5179 (Korea 2000 / Unified CS).
-#' @param geodata_path A character string specifying the directory
-#'   to store the downloaded GADM data. Default is `"~/geodata"`.
+#' @param year An integer specifying
+#'   the year of the administrative level 2 data.
+#'   Default is 2020.
 #' @note The output is a tmap object that can be further customized.
 #'   It is recommended to export the map using `tmap::tmap_save()`
 #'   with a high resolution (i.e., dpi > 200).
@@ -108,8 +121,9 @@ basemap_kor_in <- function(
 
   # load korea polygon data
   file_path <- system.file(sprintf("extdata/adm2_sf_%d.rds", year),
-    package = "tidycensussfkr"
+    package = "tidycensuskr.sf"
   )
+  adm1_code <- adm2_code <- NULL
 
   korea2 <- readRDS(file_path)
   korea <- korea2 |>
@@ -120,13 +134,25 @@ basemap_kor_in <- function(
 
   # inset bounding boxes
   bb_ull <-
-    sf::st_bbox(c(xmin = 1288000, xmax = 1308000, ymin = 1942000, ymax = 1956000), crs = 5179)
+    sf::st_bbox(
+      c(xmin = 1288000, xmax = 1308000, ymin = 1942000, ymax = 1956000),
+      crs = 5179
+    )
   bb_dkd <-
-    sf::st_bbox(c(xmin = 1386500, xmax = 1388500, ymin = 1924500, ymax = 1925200), crs = 5179)
+    sf::st_bbox(
+      c(xmin = 1386500, xmax = 1388500, ymin = 1924500, ymax = 1925200),
+      crs = 5179
+    )
   bb_bnd <-
-    sf::st_bbox(c(xmin = 745000, xmax = 765000, ymin = 1965000, ymax = 2008000), crs = 5179)
+    sf::st_bbox(
+      c(xmin = 745000, xmax = 765000, ymin = 1965000, ymax = 2008000),
+      crs = 5179
+    )
   ext_kormain <-
-    sf::st_bbox(c(xmin = 800000, xmax = 1220000, ymin = 1458000, ymax = 2070000), crs = 5179)
+    sf::st_bbox(
+      c(xmin = 800000, xmax = 1220000, ymin = 1458000, ymax = 2070000),
+      crs = 5179
+    )
 
 
   basemap_kor <-
