@@ -15,7 +15,7 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - {os: macos-latest, r: 'release'}
+          # - {os: macos-latest, r: 'release'}
           - {os: ubuntu-latest, r: 'release'}
 
     env:
@@ -46,6 +46,12 @@ jobs:
             any::rmarkdown
             any::tictoc
             any::units
+
+      - name: Install GitHub-only deps (pak)
+        shell: Rscript {0}
+        run: |
+          if (!requireNamespace("pak", quietly = TRUE)) install.packages("pak")
+          pak::pak("sigmafelix/tidycensuskr")      
 
       - uses: r-lib/actions/check-r-package@v2
         with:

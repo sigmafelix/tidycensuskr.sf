@@ -1,6 +1,6 @@
-Package: tidycensussfkr
+Package: tidycensuskr.sf
 Title: District Boundaries by Censal Years for tidycensuskr Package
-Version: 0.1.2
+Version: 0.1.4
 Authors@R: c(
     person(given = "Insang", 
           family = "Song", 
@@ -44,13 +44,11 @@ Suggests:
     remotes,
     devtools
 LazyData: true
-Remotes:
-    sigmafelix/tidycensuskr
 Depends:
     R (>= 4.1.0)
 Encoding: UTF-8
-URL: https://github.com/sigmafelix/tidycensussfkr
-BugReports: https://github.com/sigmafelix/tidycensussfkr/issues
+URL: https://github.com/sigmafelix/tidycensuskr.sf
+BugReports: https://github.com/sigmafelix/tidycensuskr.sf/issues
 RoxygenNote: 7.3.3
 Roxygen: list(markdown = TRUE)
 VignetteBuilder: knitr, rmarkdown
