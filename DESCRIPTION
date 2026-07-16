@@ -1,6 +1,6 @@
 Package: tidycensuskr.sf
 Title: District Boundaries by Censal Years for tidycensuskr Package
-Version: 0.1.4
+Version: 0.2.0
 Authors@R: c(
     person(given = "Insang", 
           family = "Song", 
