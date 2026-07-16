@@ -8,12 +8,14 @@ district boundaries by censal years for South Korea.
 ## Installation
 
 ``` r
+
 install.packages("tidycensuskr.sf", repos = "https://sigmafelix.r-universe.dev")
 ```
 
 An up-to-date version can be installed from GitHub with:
 
 ``` r
+
 # install.packages("remotes")
 remotes::install_github("sigmafelix/tidycensuskr.sf")
 ```
@@ -27,6 +29,7 @@ years. The current version supports three censal years: 2010, 2015, and
 censal year to load. The default value is 2020.
 
 ``` r
+
 library(tidycensuskr)
 #> tidycensuskr 0.2.4 (2025-11-20)
 #> Please install the companion data package tidycensussfkr to use the district boundaries.

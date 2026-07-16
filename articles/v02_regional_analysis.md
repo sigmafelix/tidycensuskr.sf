@@ -15,11 +15,13 @@
 ### Data prep
 
 ``` r
+
 # Load 2020 boundaries
 sf_2020 <- load_districts(year = 2020)
 ```
 
 ``` r
+
 # Load census population data for 2010 and 2020
 df_2010_pop <- anycensus(year = 2010,
                          codes = c("Gyeongsangnam-do", "Busan", "Ulsan"), 
@@ -38,6 +40,7 @@ sf_target <- sf_2020 |>
 ### A choropleth map with an inset map
 
 ``` r
+
 # Choropleth map for population change
 map <- ggplot(sf_target) +
   geom_sf(aes(fill = change), color = "gray80", size = 0.1) +
@@ -96,11 +99,13 @@ the province exhibit relatively stable population trends.
 ### Data prep
 
 ``` r
+
 # Load 2020 boundaries
 sf_2020 <- load_districts(year = 2020)
 ```
 
 ``` r
+
 # Load census data
 df_2020_pop <- anycensus(year = 2020,
                          type = "population")
@@ -140,6 +145,7 @@ sf_final <- sf_2020_unioned |>
 ### A bivariate choropleth map
 
 ``` r
+
 # Create 3x3 bivariate classes (population vs tax)
 bi_data <- bi_class(
   sf_final,
@@ -194,6 +200,7 @@ few metropolitan centers—fall into the low population–low tax category.
 ### Data prep
 
 ``` r
+
 # Load population data for the Seoul Metropolitan Area (SMA)
 df_sma <- anycensus(
   year  = 2020,
@@ -213,6 +220,7 @@ df_all <- df_sma |>
 ### Histograms
 
 ``` r
+
 ggplot() +
   # Background: overall distribution across all SMA
   geom_histogram(
@@ -245,6 +253,7 @@ ggplot() +
 ### A choropleth map
 
 ``` r
+
 # Load boundaries
 sf_2020 <- load_districts(year = 2020)
 

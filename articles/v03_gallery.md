@@ -28,6 +28,7 @@ concentrated and where they are sparse relative to neighboring areas.
 ### Data prep
 
 ``` r
+
 # Load 2020 boundaries
 sf_2020 <- load_districts(year = 2020)
 
@@ -46,6 +47,7 @@ var <- sf_2020_economy$company_total_cnt
 ### Global Moran’s I
 
 ``` r
+
 # Build neighbors (queen contiguity) and spatial weights
 nb <- poly2nb(sf_2020_economy, queen = TRUE)
 lw <- nb2listw(nb, style = "W", zero.policy = TRUE)
@@ -71,6 +73,7 @@ global_moran
 ### Local Moran’s *I* and LISA map
 
 ``` r
+
 # Local Moran's I
 local_moran <- localmoran(var, lw, zero.policy = TRUE)
 

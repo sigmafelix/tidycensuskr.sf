@@ -16,14 +16,14 @@
 Source:
 [`DESCRIPTION`](https://github.com/sigmafelix/tidycensuskr.sf/blob/main/DESCRIPTION)
 
-Song I, Park S, Shin H (2025). *tidycensuskr.sf: District Boundaries by
-Censal Years for tidycensuskr Package*. R package version 0.1.4,
+Song I, Park S, Shin H (2026). *tidycensuskr.sf: District Boundaries by
+Censal Years for tidycensuskr Package*. R package version 0.2.1,
 <https://github.com/sigmafelix/tidycensuskr.sf>.
 
     @Manual{,
       title = {tidycensuskr.sf: District Boundaries by Censal Years for tidycensuskr Package},
       author = {Insang Song and Sohyun Park and Hyesop Shin},
-      year = {2025},
-      note = {R package version 0.1.4},
+      year = {2026},
+      note = {R package version 0.2.1},
       url = {https://github.com/sigmafelix/tidycensuskr.sf},
     }
