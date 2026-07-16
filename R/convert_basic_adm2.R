@@ -11,6 +11,7 @@ convert_basic_adm2 <- function(
   adm2_sf = NULL,
   year = 2020
 ) {
+  adm2_code <- NULL
   if (is.null(adm2_sf)) {
     # load korea polygon data
     file_path <- system.file(sprintf("extdata/adm2_sf_%d.rds", year),
