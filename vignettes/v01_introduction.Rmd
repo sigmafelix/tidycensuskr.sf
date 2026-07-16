@@ -1,0 +1,93 @@
+---
+title: "List of datasets in tidycensuskr.sf"
+output: rmarkdown::html_vignette
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+vignette: >
+  %\VignetteIndexEntry{List of datasets in tidycensuskr.sf} 
+  %\VignetteEngine{knitr::rmarkdown}
+  %\usepackage[utf8]{inputenc}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+library(sf)
+library(dplyr)
+library(tidyr)
+library(tidycensuskr)
+library(tidycensuskr.sf)
+```
+
+## Notes
+- The version 0.2.0 offers ADM2 and ADM3-level boundary data for three census years (2010, 2015, and 2020)
+- The bundled data are collected from the Statistical Geographic Information Service (SGIS) of the Korean government, which is the official source of administrative boundaries in South Korea.
+- The data are provided in the form of `sf` objects in coordinate reference system (CRS) 5179 (Korea Central Belt 2000).
+- All bundled data are provided under the Korea Open Government License Type 1, which is a permissive license that allows for free use, modification, and distribution of the data. For more information, please refer to the [Korea Open Government License](https://www.kogl.or.kr/info/licenseTypeEn.do). It is largely based on the Creative Commons Attribution License (CC BY).
+
+![](../man/figures/kogl_type1.jpg){height=88px}
+![](../man/figures/lic-cc-by.png){height=88px}
+
+
+
+## ADM2: District-level boundaries
+- ADM2, which corresponds to the district/town/township level (so called _Si/Gun/Gu_ [시/군/구] in Korean), is the most detailed level of administrative boundaries available in terms of census data.
+- Three separate files are provided in `extdata` folder under the package installation path.
+  - `adm2_sf_2010.rds`: ADM2 boundaries for 2010 census
+  - `adm2_sf_2015.rds`: ADM2 boundaries for 2015 census
+  - `adm2_sf_2020.rds`: ADM2 boundaries for 2020 census
+- Each file contains a single `sf` object with the following columns:
+  - `adm2_code`: ADM2 code (5-digit)
+  - `geometry`: geometry column containing the polygon boundaries of each ADM2 unit
+
+```{r load_adm2_2020, include=TRUE}
+# Load ADM2 boundaries for 2020
+system.file("extdata/adm2_sf_2020.rds", package = "tidycensuskr.sf") |>
+  readRDS() |>
+  head()
+```
+
+```{r load_adm2_2015, include=TRUE}
+# Load ADM2 boundaries for 2015
+system.file("extdata/adm2_sf_2015.rds", package = "tidycensuskr.sf") |>
+  readRDS() |>
+  head()
+```
+
+```{r load_adm2_2010, include=TRUE}
+# Load ADM2 boundaries for 2010
+system.file("extdata/adm2_sf_2010.rds", package = "tidycensuskr.sf") |>
+  readRDS() |>
+  head()
+```
+
+
+## ADM3: Neighborhood-level boundaries
+- ADM3, which corresponds to the neighborhood level (so called _Eup/Myeon/Dong_ [읍/면/동] in Korean).
+- Three separate files are provided in `extdata` folder under the package installation path.
+  - `adm3_sf_2010.rds`: ADM3 boundaries for 2010 census
+  - `adm3_sf_2015.rds`: ADM3 boundaries for 2015 census
+  - `adm3_sf_2020.rds`: ADM3 boundaries for 2020 census
+- Each file contains a single `sf` object with the following columns:
+  - `adm3_code`: ADM3 code (7-digit)
+  - `adm3_name_kr`: ADM3 name in Korean
+  - `geometry`: geometry column containing the polygon boundaries of each ADM3 unit
+
+```{r load_adm3_2020, include=TRUE}
+# Load ADM3 boundaries for 2020
+system.file("extdata/adm3_sf_2020.rds", package = "tidycensuskr.sf") |>
+  readRDS() |>
+  head()
+```
+
+```{r load_adm3_2015, include=TRUE}
+# Load ADM3 boundaries for 2015
+system.file("extdata/adm3_sf_2015.rds", package = "tidycensuskr.sf") |>
+  readRDS() |>
+  head()
+```
+
+```{r load_adm3_2010, include=TRUE}
+# Load ADM3 boundaries for 2010
+system.file("extdata/adm3_sf_2010.rds", package = "tidycensuskr.sf") |>
+  readRDS() |>
+  head()
+```

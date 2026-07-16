@@ -1,3 +1,9 @@
+# 0.2
+## 0.2.1
+- Added ADM3 RDS files
+- Vignette 01 for a full data catalog
+- License notes
+
 # 0.1
 ## 0.1.4
 - renamed the package to `tidycensuskr.sf`

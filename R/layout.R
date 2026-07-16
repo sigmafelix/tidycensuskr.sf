@@ -13,7 +13,7 @@
 #' @importFrom sf st_as_sf st_transform st_bbox
 #' @importFrom geodata gadm
 #' @importFrom tmap tm_shape tm_polygons tm_borders tm_scalebar
-#'   tm_layout tm_inset tm_pos_in
+#' @importFrom tmap tm_layout tm_inset tm_pos_in
 #' @export
 basemap_kor <- function(
   geodata_path = "~/geodata"
@@ -113,7 +113,7 @@ basemap_kor <- function(
 #' @importFrom sf st_as_sf st_transform st_bbox
 #' @importFrom geodata gadm
 #' @importFrom tmap tm_shape tm_polygons tm_borders tm_scalebar
-#'   tm_layout tm_inset tm_pos_in
+#' @importFrom tmap tm_layout tm_inset tm_pos_in
 #' @export
 basemap_kor_in <- function(
   year = 2020

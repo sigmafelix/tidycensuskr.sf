@@ -5,7 +5,7 @@
     build_date <- file.info(desc_file)$mtime
     packageStartupMessage(
       sprintf(
-        "tidycensussfkr %s (%s)\n",
+        "tidycensuskr.sf %s (%s)\n",
         utils::packageVersion(pkgname),
         format(build_date, "%Y-%m-%d")
       )
