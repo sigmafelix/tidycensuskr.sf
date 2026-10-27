@@ -21,20 +21,34 @@ remotes::install_github("sigmafelix/tidycensuskr.sf")
 
 ## Usage
 
-`load_districts()` function is the main function to load district
-boundaries by censal years. The current version supports three censal
-years: 2010, 2015, and 2020. The function takes a single argument `year`
-which specifies the censal year to load. The default value is 2020.
+`load_districts()` is the main function to load district boundaries.
+ADM2 and ADM3 boundaries are available through 2025. The 2025 ADM2
+boundary is based on the 2025 second-quarter vintage from the
+Statistical Geographic Information System (SGIS), reference date
+2025-06-30. The default `year` is 2020. Note that the geometries are
+provided in the form of `sf` objects in coordinate reference system
+(CRS) 5179 (Korea Central Belt 2000). The data were purposely simplified
+to reduce file size and improve visualization performance. The
+simplification process may have resulted in some loss of detail in the
+boundaries.
 
 ``` r
 library(tidycensuskr)
-#> tidycensuskr 0.2.4 (2025-11-20)
-#> Please install the companion data package tidycensussfkr to use the district boundaries.
-#> install.packages('tidycensussfkr', repos = 'https://sigmafelix.r-universe.dev')
+#> tidycensuskr 0.4.0 (2026-10-27)
+#> Please install the companion data package tidycensuskr.sf to use the district boundaries.
+#> install.packages('tidycensuskr.sf', repos = 'https://sigmafelix.r-universe.dev')
 library(tidycensuskr.sf)
-#> tidycensussfkr 0.1.4 (2025-11-23)
+#> Registered S3 method overwritten by 'stars':
+#>   method                  from
+#>   st_interpolate_aw.stars sf
+#> tidycensuskr.sf 0.4.1 (2026-10-27)
+#> 
+#> Attaching package: 'tidycensuskr.sf'
+#> The following object is masked from 'package:tidycensuskr':
+#> 
+#>     load_districts
 library(sf)
-#> Linking to GEOS 3.12.2, GDAL 3.11.4, PROJ 9.4.1; sf_use_s2() is TRUE
+#> Linking to GEOS 3.15.0, GDAL 3.13.3, PROJ 9.9.0; sf_use_s2() is TRUE
 sf::sf_use_s2(FALSE)
 #> Spherical geometry (s2) switched off
 
@@ -56,7 +70,13 @@ head(adm2_2020)
 plot(st_geometry(adm2_2020))
 ```
 
-<img src="man/figures/README-load_2020-1.png" width="100%" />
+<img src="man/figures/README-load_2020-1.png" alt="" width="100%" />
+
+``` r
+
+# Load ADM2 boundaries as of 2025-06-30
+adm2_2025 <- load_districts(year = 2025)
+```
 
 ## Data source
 

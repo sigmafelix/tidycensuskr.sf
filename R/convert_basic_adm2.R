@@ -13,11 +13,7 @@ convert_basic_adm2 <- function(
 ) {
   adm2_code <- NULL
   if (is.null(adm2_sf)) {
-    # load korea polygon data
-    file_path <- system.file(sprintf("extdata/adm2_sf_%d.rds", year),
-      package = "tidycensuskr.sf"
-    )
-    adm2_sf <- readRDS(file_path)
+    adm2_sf <- load_districts(year)
   }
 
   basic_lg_sf <- adm2_sf |>

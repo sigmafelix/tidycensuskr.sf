@@ -15,11 +15,13 @@ library(dplyr)
 library(tidyr)
 library(tidycensuskr)
 library(tidycensuskr.sf)
+library(sfdep)
 ```
 
 ## Notes
-- The version 0.2.0 offers ADM2 and ADM3-level boundary data for three census years (2010, 2015, and 2020)
-- The bundled data are collected from the Statistical Geographic Information Service (SGIS) of the Korean government, which is the official source of administrative boundaries in South Korea.
+- ADM2 and ADM3 boundaries are available through 2025.
+- The 2025 ADM2 boundary is dated 2025-06-30 (KOSTAT 2025 second-quarter boundary file).
+- The 2010, 2015, and 2020 boundaries are from SGIS; the 2025 ADM2 boundary is from the KOSTAT 2025 second-quarter boundary file.
 - The data are provided in the form of `sf` objects in coordinate reference system (CRS) 5179 (Korea Central Belt 2000).
 - All bundled data are provided under the Korea Open Government License Type 1, which is a permissive license that allows for free use, modification, and distribution of the data. For more information, please refer to the [Korea Open Government License](https://www.kogl.or.kr/info/licenseTypeEn.do). It is largely based on the Creative Commons Attribution License (CC BY).
 
@@ -30,46 +32,67 @@ library(tidycensuskr.sf)
 
 ## ADM2: District-level boundaries
 - ADM2, which corresponds to the district/town/township level (so called _Si/Gun/Gu_ [시/군/구] in Korean), is the most detailed level of administrative boundaries available in terms of census data.
-- Three separate files are provided in `extdata` folder under the package installation path.
+- The 2010, 2015, 2020, and 2025 files are in `inst/extdata`.
   - `adm2_sf_2010.rds`: ADM2 boundaries for 2010 census
   - `adm2_sf_2015.rds`: ADM2 boundaries for 2015 census
   - `adm2_sf_2020.rds`: ADM2 boundaries for 2020 census
-- Each file contains a single `sf` object with the following columns:
+  - `adm2_sf_2025.rds`: ADM2 boundaries for 2025 census (note: as of 2025-06-30)
+- `load_districts()` returns the ADM2 polygons with these attributes:
+  - `year`: boundary year
   - `adm2_code`: ADM2 code (5-digit)
-  - `geometry`: geometry column containing the polygon boundaries of each ADM2 unit
+  - geometry: the polygon boundary for each ADM2 unit
 
 ```{r load_adm2_2020, include=TRUE}
-# Load ADM2 boundaries for 2020
-system.file("extdata/adm2_sf_2020.rds", package = "tidycensuskr.sf") |>
-  readRDS() |>
+# Load 2020 district polygons
+load_districts(year = 2020) |>
+  sf::st_drop_geometry() |>
+  dplyr::select(adm2_code) |>
+  head()
+```
+
+```{r load_adm2_2025, include=TRUE}
+# Load 2025 district polygons
+load_districts(year = 2025) |>
+  sf::st_drop_geometry() |>
+  dplyr::select(adm2_code) |>
   head()
 ```
 
 ```{r load_adm2_2015, include=TRUE}
-# Load ADM2 boundaries for 2015
-system.file("extdata/adm2_sf_2015.rds", package = "tidycensuskr.sf") |>
-  readRDS() |>
+# Load 2015 district polygons
+load_districts(year = 2015) |>
+  sf::st_drop_geometry() |>
+  dplyr::select(adm2_code) |>
   head()
 ```
 
 ```{r load_adm2_2010, include=TRUE}
-# Load ADM2 boundaries for 2010
-system.file("extdata/adm2_sf_2010.rds", package = "tidycensuskr.sf") |>
-  readRDS() |>
+# Load 2010 district polygons
+load_districts(year = 2010) |>
+  sf::st_drop_geometry() |>
+  dplyr::select(adm2_code) |>
   head()
 ```
 
 
 ## ADM3: Neighborhood-level boundaries
 - ADM3, which corresponds to the neighborhood level (so called _Eup/Myeon/Dong_ [읍/면/동] in Korean).
-- Three separate files are provided in `extdata` folder under the package installation path.
+- The 2010, 2015, 2020, and 2025 files are in `extdata`.
   - `adm3_sf_2010.rds`: ADM3 boundaries for 2010 census
   - `adm3_sf_2015.rds`: ADM3 boundaries for 2015 census
   - `adm3_sf_2020.rds`: ADM3 boundaries for 2020 census
+  - `adm3_sf_2025.rds`: ADM3 boundaries through 2025
 - Each file contains a single `sf` object with the following columns:
-  - `adm3_code`: ADM3 code (7-digit)
+  - `adm3_code`: ADM3 code (code length varies by boundary year)
   - `adm3_name_kr`: ADM3 name in Korean
   - `geometry`: geometry column containing the polygon boundaries of each ADM3 unit
+
+```{r load_adm3_2025, include=TRUE}
+# Load ADM3 boundaries through 2025
+system.file("extdata/adm3_sf_2025.rds", package = "tidycensuskr.sf") |>
+  readRDS() |>
+  head()
+```
 
 ```{r load_adm3_2020, include=TRUE}
 # Load ADM3 boundaries for 2020
@@ -90,4 +113,43 @@ system.file("extdata/adm3_sf_2015.rds", package = "tidycensuskr.sf") |>
 system.file("extdata/adm3_sf_2010.rds", package = "tidycensuskr.sf") |>
   readRDS() |>
   head()
+```
+
+
+## Spatial weight matrix
+- Spatial weight matrix represents the spatial relationships between units (e.g., districts) in a spatial dataset. It is commonly used in spatial analysis and modeling to account for spatial autocorrelation and to define the influence of neighboring units on each other.
+- This package provides a spatial weight matrix for ADM2 boundaries in each censal year (2010, 2015, 2020, and 2025). The spatial weight matrix is based on the adjacency of the ADM2 polygons, where neighboring districts are assigned a weight of 1, and non-neighboring districts are assigned a weight of 0.
+
+```{r vis_w2020, include=TRUE}
+# Load spatial weight matrix for ADM2 boundaries
+data(adm2_wmat_2020, package = "tidycensuskr.sf")
+
+# convert matrix to sfdep object
+w_2020 <- spdep::mat2listw(adm2_wmat_2020)
+
+# plot the spatial weight matrix
+sf_2020 <- load_districts(year = 2020)
+sf_2020 <- sf::st_cast(sf_2020, "MULTIPOLYGON")
+
+plot(sf_2020[["geometry"]], col = "lightblue", border = "gray")
+plot(w_2020, sf::st_coordinates(sf::st_centroid(sf_2020)), add = TRUE)
+
+
+```
+
+```{r vis_w2025, include=TRUE}
+# Load spatial weight matrix for ADM2 boundaries
+data(adm2_wmat_2025, package = "tidycensuskr.sf")
+
+# convert matrix to sfdep object
+w_2025 <- spdep::mat2listw(adm2_wmat_2025)
+
+# plot the spatial weight matrix
+sf_2025 <- load_districts(year = 2025)
+sf_2025 <- sf::st_cast(sf_2025, "MULTIPOLYGON")
+
+plot(sf_2025[["geometry"]], col = "lightblue", border = "gray")
+plot(w_2025, sf::st_coordinates(sf::st_centroid(sf_2025)), add = TRUE)
+
+
 ```

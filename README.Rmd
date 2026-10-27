@@ -33,7 +33,7 @@ remotes::install_github("sigmafelix/tidycensuskr.sf")
 ```
 
 ## Usage
-`load_districts()` function is the main function to load district boundaries by censal years. The current version supports three censal years: 2010, 2015, and 2020. The function takes a single argument `year` which specifies the censal year to load. The default value is 2020.
+`load_districts()` is the main function to load district boundaries. ADM2 and ADM3 boundaries are available through 2025. The 2025 ADM2 boundary is based on the 2025 second-quarter vintage from the Statistical Geographic Information System (SGIS), reference date 2025-06-30. The default `year` is 2020. Note that the geometries are provided in the form of `sf` objects in coordinate reference system (CRS) 5179 (Korea Central Belt 2000). The data were purposely simplified to reduce file size and improve visualization performance. The simplification process may have resulted in some loss of detail in the boundaries.
 
 ```{r load_2020}
 library(tidycensuskr)
@@ -45,6 +45,9 @@ sf::sf_use_s2(FALSE)
 adm2_2020 <- load_districts(year = 2020)
 head(adm2_2020)
 plot(st_geometry(adm2_2020))
+
+# Load ADM2 boundaries as of 2025-06-30
+adm2_2025 <- load_districts(year = 2025)
 
 ```
 
